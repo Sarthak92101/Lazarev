@@ -42,3 +42,33 @@ function navAnimation() {
 
 navAnimation();
 
+function Page2Animation(){
+    var RightElemens = document.querySelectorAll(".right-elem");
+var RElemImg = document.querySelector(".right-elem img");
+
+
+RightElemens.forEach(function (elem) {
+    elem.addEventListener("mouseenter", () => {
+      gsap.to( elem.childNodes[3],{
+        opacity:1,
+        scale:1
+      })
+    })
+    elem.addEventListener("mouseleave", () => {
+        gsap.to(elem.childNodes[3],{
+            opacity:0,
+            scale:0
+        })
+    })
+    elem.addEventListener("mousemove",(dets)=>{
+     gsap.to(elem.childNodes[3],{
+        x:dets.x-elem.getBoundingClientRect().x-50,
+        y:dets.y-elem.getBoundingClientRect().y-50
+     })
+    })
+})
+
+
+
+}
+Page2Animation();

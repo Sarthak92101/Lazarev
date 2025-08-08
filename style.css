@@ -243,8 +243,8 @@ margin: 0 1vw;
   position: relative;
   /* background-color: red; */
   /* height: 15vh; */
-  padding-top: 2vw;
-  padding-bottom: 7vw;
+  padding-top: 3vw;
+  padding-bottom: 5vw;
   border-bottom: 1px solid #333;
 }
 .right-elem h2{
@@ -258,6 +258,7 @@ margin: 0 1vw;
   opacity: 0;
   object-fit: cover;
   position: absolute;
+  scale:0
 }
 
 /* comment */
