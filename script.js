@@ -40,35 +40,60 @@ function navAnimation() {
     })
 }
 
-navAnimation();
 
-function Page2Animation(){
+
+function Page2Animation() {
     var RightElemens = document.querySelectorAll(".right-elem");
-var RElemImg = document.querySelector(".right-elem img");
+    var RElemImg = document.querySelector(".right-elem img");
 
 
-RightElemens.forEach(function (elem) {
-    elem.addEventListener("mouseenter", () => {
-      gsap.to( elem.childNodes[3],{
-        opacity:1,
-        scale:1
-      })
-    })
-    elem.addEventListener("mouseleave", () => {
-        gsap.to(elem.childNodes[3],{
-            opacity:0,
-            scale:0
+    RightElemens.forEach(function (elem) {
+        elem.addEventListener("mouseenter", () => {
+            gsap.to(elem.childNodes[3], {
+                opacity: 1,
+                scale: 1
+            })
+        })
+        elem.addEventListener("mouseleave", () => {
+            gsap.to(elem.childNodes[3], {
+                opacity: 0,
+                scale: 0
+            })
+        })
+        elem.addEventListener("mousemove", (dets) => {
+            gsap.to(elem.childNodes[3], {
+                x: dets.x - elem.getBoundingClientRect().x - 50,
+                y: dets.y - elem.getBoundingClientRect().y - 50
+            })
         })
     })
-    elem.addEventListener("mousemove",(dets)=>{
-     gsap.to(elem.childNodes[3],{
-        x:dets.x-elem.getBoundingClientRect().x-50,
-        y:dets.y-elem.getBoundingClientRect().y-50
-     })
-    })
-})
 
 
 
 }
+
+function page3VideoAnimation(){
+    var page3Centre = document.querySelector("#page3-centre");
+var video = document.querySelector("#page3 video");
+
+page3Centre.addEventListener("click", () => {
+    video.play();
+    gsap.to(video, {
+        transform: "scaleX(1) scaleY(1)",
+        opacity: 1,
+        borderRadius: 0
+    })
+})
+video.addEventListener("click", () =>{
+    video.pause()
+    gsap.to(video, {
+        transform: "scaleX(0.7) scaleY(0)",
+        opacity: 0,
+        borderRadius: "30px"
+    })
+})
+}
+navAnimation();
 Page2Animation();
+page3VideoAnimation()
+
