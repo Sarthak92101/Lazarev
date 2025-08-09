@@ -316,5 +316,57 @@ color: #111;
   border-radius: 30px;
   z-index: 99999 ;
 }
+#page4{
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 4vh;
+  
+
+}
+#left-div{
+  height: 100%;
+  width: 50%;
+  /* background-color: #7d6060; */
+  padding: 150px 20px;
+ 
+}
+#left-div h3{
+display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+  color: #111;
+  padding-right: 4vw;
+}
+#right-div{
+  height: 100%;
+  width: 50%;
+  /* background-color: #45af4aa0; */
+  padding-top: 4vw;
+}
+#right-div .text{
+padding-bottom: 2vw;
+font-size: 1.5vw;
+color: #111;
+padding-right: 12vw;
+}
+#right-div #one{
+  padding-top: 5vw;
+  font-size: 1vw;
+  border-bottom: 1vw;
+  text-transform: uppercase;
+  color: #c0b7b7;
+}
+
+#page5{
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fff;
+}
+
 
 /* comment */
