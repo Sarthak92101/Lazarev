@@ -72,28 +72,43 @@ function Page2Animation() {
 
 }
 
-function page3VideoAnimation(){
+function page3VideoAnimation() {
     var page3Centre = document.querySelector("#page3-centre");
-var video = document.querySelector("#page3 video");
+    var video = document.querySelector("#page3 video");
 
-page3Centre.addEventListener("click", () => {
-    video.play();
-    gsap.to(video, {
-        transform: "scaleX(1) scaleY(1)",
-        opacity: 1,
-        borderRadius: 0
+    page3Centre.addEventListener("click", () => {
+        video.play();
+        gsap.to(video, {
+            transform: "scaleX(1) scaleY(1)",
+            opacity: 1,
+            borderRadius: 0
+        })
     })
-})
-video.addEventListener("click", () =>{
-    video.pause()
-    gsap.to(video, {
-        transform: "scaleX(0.7) scaleY(0)",
-        opacity: 0,
-        borderRadius: "30px"
+    video.addEventListener("click", () => {
+        video.pause()
+        gsap.to(video, {
+            transform: "scaleX(0.7) scaleY(0)",
+            opacity: 0,
+            borderRadius: "30px"
+        })
     })
-})
 }
-navAnimation();
-Page2Animation();
-page3VideoAnimation()
+
+var sections = document.querySelectorAll(".sec-right");
+
+sections.forEach(function (elem) {
+    elem.addEventListener("mouseenter", () => {
+        elem.childNodes[3].style.opacity = 1;
+        elem.childNodes[3].play();
+    })
+
+     elem.addEventListener("mouseleave", () => {
+        elem.childNodes[3].style.opacity = 0;
+        elem.childNodes[3].load();
+    })
+})
+
+// navAnimation();
+// Page2Animation();
+// page3VideoAnimation();
 
