@@ -157,9 +157,32 @@ function page7Animation(){
     }
 })
 }
+function loadingAnimation(){
+    var tl=gsap.timeline();
+    tl.from("#page1",{
+      opacity:0,
+      duration:0.3,
+       delay:0.2
+    })
+     tl.from("#page1",{
+        transform:"scaleX(0.7) scaleY(0)",
+        borderRadius:50,
+        duration:2,
+        ease:"expo.out "
+    })
+    tl.from("nav",{
+        opacity:0,
+        duration:-0.2
+    })
+     tl.from("#page1 h1, #page1 p, #page1 div",{
+        opacity:0,
+        duration:0.5,
+        stagger:0.2
+    })
+}
 locomotiveAnimation();
 navAnimation();
 Page2Animation();
 page3VideoAnimation();
 page7Animation();
-
+loadingAnimation();
